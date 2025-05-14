@@ -216,7 +216,7 @@ class DadosTse:
                     dados_merge_completo['Nome do candidato'].isin(self.nome_candidato)]
 
             dados_merge_completo.to_csv(
-                f'Eleições {self.ano} - {self.estados[self.uf_estado]}.csv.gz', compression='gzip', index=False, encoding='utf-8')
+                f'Eleições {self.ano} - {self.estados[self.uf_estado]}.csv.gz', compression='gzip', index=False)
             # print(dados_merge_completo)
 
         except ValueError:
