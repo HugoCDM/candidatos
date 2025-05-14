@@ -216,7 +216,8 @@ class DadosTse:
                     dados_merge_completo['Nome do candidato'].isin(self.nome_candidato)]
 
             dados_merge_completo.to_csv(
-                f'Eleições {self.ano} - {self.estados[self.uf_estado]}.csv.gz', compression='gzip', index=False)
+                f'Eleições {self.ano} - {self.estados[self.uf_estado]}.csv.gz', compression='gzip', index=False, encoding='utf-8')
+            # print(dados_merge_completo)
 
         except ValueError:
             print('Deu erro')
@@ -314,15 +315,15 @@ estados = {
     'SP': 'São Paulo',
     'SE': 'Sergipe',
     'TO': 'Tocantins'
-    
+
 }
 
 
-for key in estados.keys():
-    dados.download_arquivos(2016, key)
-    dados.download_arquivos(2018, key)
-    dados.download_arquivos(2020, key)
-    dados.download_arquivos(2022, key)
-    dados.download_arquivos(2024, key)
+# for key in estados.keys():
+#     dados.download_arquivos(2016, key)
+#     dados.download_arquivos(2018, key)
+#     dados.download_arquivos(2020, key)
+#     dados.download_arquivos(2022, key)
+#     dados.download_arquivos(2024, key)
 
-# dados.download_arquivos(2022, 'df')
+dados.download_arquivos(2022, 'pb')
